@@ -86,6 +86,36 @@ calc.html
 </html>
 ```
 
+index.js
+
+```
+let screen = document.getElementById('screen');
+buttons = document.querySelectorAll('button');
+let screenValue = '';
+for (item of buttons) {
+    item.addEventListener('click', (e) => {
+        buttonText = e.target.innerText;
+        console.log('Button text is ', buttonText);
+        if (buttonText == 'X') {
+            buttonText = '*';
+            screenValue += buttonText;
+            screen.value = screenValue;
+        }
+        else if (buttonText == 'C') {
+            screenValue = "";
+            screen.value = screenValue;
+        }
+        else if (buttonText == '=') {
+            screen.value = eval(screenValue);
+        }
+        else {
+            screenValue += buttonText;
+            screen.value = screenValue;
+        }
+    })
+}
+```
+
 style.css
 
 ```
@@ -155,43 +185,13 @@ button {
 }
 ```
 
-index.js
-
-```
-let screen = document.getElementById('screen');
-buttons = document.querySelectorAll('button');
-let screenValue = '';
-for (item of buttons) {
-    item.addEventListener('click', (e) => {
-        buttonText = e.target.innerText;
-        console.log('Button text is ', buttonText);
-        if (buttonText == 'X') {
-            buttonText = '*';
-            screenValue += buttonText;
-            screen.value = screenValue;
-        }
-        else if (buttonText == 'C') {
-            screenValue = "";
-            screen.value = screenValue;
-        }
-        else if (buttonText == '=') {
-            screen.value = eval(screenValue);
-        }
-        else {
-            screenValue += buttonText;
-            screen.value = screenValue;
-        }
-    })
-}
-```
-
 ## OUTPUT:
 
-![alt text](keerthi/calcapp/static/calcemptypage.png)
+![calcemptypage](https://github.com/ikeerthivasanswaminathan/Calc/assets/148937372/3e535829-542f-4d2b-82f5-8e51385b2afc)
 
-![alt text](keerthi/calcapp/static/calcvalueenteredypage.png)
+![calcvalueenteredypage](https://github.com/ikeerthivasanswaminathan/Calc/assets/148937372/fb01ae23-9429-4a2f-a408-7b988e021509)
 
-![alt text](keerthi/calcapp/static/calcvaluecalculatedpage.png)
+![calcvaluecalculatedpage](https://github.com/ikeerthivasanswaminathan/Calc/assets/148937372/f3a3e524-6e6e-421a-a368-c65cd79dbc68)
 
 ## RESULT:
 The program for designing a standard calculator using HTML and CSS is executed successfully.
